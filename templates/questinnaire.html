@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %} Анкета {% endblock %}
+{% block content %}
+
+    <style>
+    .header-h1 {
+    position: relative;
+    margin-bottom: .5rem;
+    text-align: center;
+  }
+  .header-h1 h1 {
+    display: inline-block;
+    background: #fff;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: .5rem 1.5rem;
+    border: .125rem solid #6a1b9a;
+    color: #6a1b9a;
+  }
+  .header-h1 h1::after {
+    content: "";
+    position: absolute;
+    background: #6a1b9a;
+    height: .125rem;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: -999;
+  }
+  .header-h1-dark h1 {
+    background: #6a1b9a;
+    color: #fff;
+ }
+   	.legend {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11pt; /* Размер шрифта в пунктах */
+   }
+</style>
+
+    <div class="header-h1">
+        <h1>Анкета</h1>
+    </div>
+    <form action="/process" method = 'POST'>
+    <fieldset>
+    <legend><b>Опрос про стресс и здоровье</b></legend>
+
+		Пол<br />
+	<input type="radio" name="gender" value="Мужской" /> М<br />
+	<input type="radio" name="gender" value="Женский" /> Ж<br />
+		Возраст<br />
+	<input type="text" name="age"  size="3"><br />
+    1.Мне тяжело чувствовать себя расслабленным ?<br>
+    <input type="radio" name="ask" value="almost_always" >Почти всегда<br>
+    <input type="radio" name="ask" value="most_of_the_time">Большую часть времени<br>
+	<input type="radio" name="ask" value="some_of_the_time">Некоторое время<br>
+	<input type="radio" name="ask" value="almost_never">Почти никогда<br>
+	<input type="radio" name="ask" value="never">Никогда<br>
+	
+    2.Вы чувствуете, что у вас здоровый баланс между работой и жизнью или учебой и жизнью?<br>
+	<input type="radio" name="ask2" value="yes" >Да<br>
+	<input type="radio" name="ask2" value="no">Нет<br>
+	
+	3.Где вы чаще испытываете стресс?<br>
+	<input type="radio" name="ask3" value="home" >Дома<br>
+	<input type="radio" name="ask3" value="work">На работе<br>
+	<input type="radio" name="ask3" value="education">На учебе<br>
+	
+	4.Когда вы испытываете стресс?<br>
+	<input type="radio" name="ask4" value="exam" >Перед экзаменом или контрольной<br>
+	<input type="radio" name="ask4" value="report">Перед важным отчетом<br>
+	<input type="radio" name="ask4" value="at_work">Каждый день на работе<br>
+	<input type="radio" name="ask4" value="at_uni">Каждый день на учебе<br>
+	
+	5.Есть ли у вас вредные привычки?<br>
+	<input type="radio" name="ask5" value="yes">Да<br>
+	<input type="radio" name="ask5" value="no">Нет<br>
+	
+	6.Повлияло ли стрессовое состояние на появление вредных привычек?<br>
+	<input type="radio" name="ask6" value="yes">Да<br>
+	<input type="radio" name="ask6" value="no">Нет<br>
+
+		        <br>
+        <button type="submit" class="btn btn-dark btn-lg my-1">Отправить</button>
+
+        <br>
+    </fieldset>
+    </form>
+
+
+{% endblock %}
